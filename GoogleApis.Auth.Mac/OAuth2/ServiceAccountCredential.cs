@@ -23,13 +23,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-//using Org.BouncyCastle.Crypto.Parameters;
-//using Org.BouncyCastle.Security;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Security;
 
 using Google.Apis.Auth.OAuth2.Requests;
 using Google.Apis.Json;
 using Google.Apis.Logging;
 using Google.Apis.Util;
+using Google.Apis.Util.Security;
 
 namespace Google.Apis.Auth.OAuth2
 {
@@ -228,23 +229,21 @@ namespace Google.Apis.Auth.OAuth2
 		/// <param name="payload">the JWT payload to sign.</param>
 		private string CreateAssertionFromPayload(JsonWebSignature.Payload payload)
 		{
-			throw new NotImplementedException ();
+			string serializedHeader = CreateSerializedHeader();
+			string serializedPayload = NewtonsoftJsonSerializer.Instance.Serialize(payload);
 
-//			string serializedHeader = CreateSerializedHeader();
-//			string serializedPayload = NewtonsoftJsonSerializer.Instance.Serialize(payload);
-//
-//			StringBuilder assertion = new StringBuilder();
-//			assertion.Append(UrlSafeBase64Encode(serializedHeader))
-//				.Append(".")
-//				.Append(UrlSafeBase64Encode(serializedPayload));
-//
-//			// Sign the header and the payload.
-//			var hashAlg = new SHA256CryptoServiceProvider();
-//			byte[] assertionHash = hashAlg.ComputeHash(Encoding.ASCII.GetBytes(assertion.ToString()));
-//
-//			var signature = UrlSafeBase64Encode(key.SignHash(assertionHash, "2.16.840.1.101.3.4.2.1" /* SHA256 OIG */)); 
-//			assertion.Append(".").Append(signature);
-//			return assertion.ToString();
+			StringBuilder assertion = new StringBuilder();
+			assertion.Append(UrlSafeBase64Encode(serializedHeader))
+				.Append(".")
+				.Append(UrlSafeBase64Encode(serializedPayload));
+
+			// Sign the header and the payload.
+			var hashAlg = new MacSHA256CryptoServiceProvider();
+			byte[] assertionHash = hashAlg.ComputeHash(Encoding.ASCII.GetBytes(assertion.ToString()));
+
+			var signature = UrlSafeBase64Encode(key.SignHash(assertionHash, "2.16.840.1.101.3.4.2.1" /* SHA256 OIG */)); 
+			assertion.Append(".").Append(signature);
+			return assertion.ToString();
 		}
 
 		/// <summary>
@@ -265,13 +264,11 @@ namespace Google.Apis.Auth.OAuth2
 		/// <summary>Converts the PKCS8 private key to RSA parameters. This method uses the Bouncy Castle library.</summary>
 		private static RSAParameters ConvertPKCS8ToRSAParameters(string pkcs8PrivateKey)
 		{
-			throw new NotImplementedException ();
-
-//			Utilities.ThrowIfNullOrEmpty(pkcs8PrivateKey, "pkcs8PrivateKey");
-//			var base64PrivateKey = pkcs8PrivateKey.Replace(PrivateKeyPrefix, "").Replace("\n", "").Replace(PrivateKeySuffix, "");
-//			var privateKeyBytes = Convert.FromBase64String(base64PrivateKey);
-//			RsaPrivateCrtKeyParameters crtParameters = (RsaPrivateCrtKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
-//			return DotNetUtilities.ToRSAParameters(crtParameters);
+			Utilities.ThrowIfNullOrEmpty(pkcs8PrivateKey, "pkcs8PrivateKey");
+			var base64PrivateKey = pkcs8PrivateKey.Replace(PrivateKeyPrefix, "").Replace("\n", "").Replace(PrivateKeySuffix, "");
+			var privateKeyBytes = Convert.FromBase64String(base64PrivateKey);
+			RsaPrivateCrtKeyParameters crtParameters = (RsaPrivateCrtKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
+			return DotNetUtilities.ToRSAParameters(crtParameters);
 		}
 
 		/// <summary>
