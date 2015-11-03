@@ -238,7 +238,7 @@ namespace Google.Apis.Auth.OAuth2
 				.Append(UrlSafeBase64Encode(serializedPayload));
 
 			// Sign the header and the payload.
-			var hashAlg = new MacSHA256CryptoServiceProvider();
+			var hashAlg = new SHA256CryptoServiceProvider();
 			byte[] assertionHash = hashAlg.ComputeHash(Encoding.ASCII.GetBytes(assertion.ToString()));
 
 			var signature = UrlSafeBase64Encode(key.SignHash(assertionHash, "2.16.840.1.101.3.4.2.1" /* SHA256 OIG */)); 

@@ -4,14 +4,14 @@ using System.Security;
 
 namespace Google.Apis.Util.Security
 {
-	public sealed class MacSHA256CryptoServiceProvider : SHA256 {
+	public sealed class SHA256CryptoServiceProvider : SHA256 {
 
 		static byte[] Empty = new byte [0];
 
 		private SHA256 hash;
 
 		[SecurityCritical]
-		public MacSHA256CryptoServiceProvider ()
+		public SHA256CryptoServiceProvider ()
 		{
 			// note: we don't use SHA256.Create since CryptoConfig could, 
 			// if set to use this class, result in a endless recursion
