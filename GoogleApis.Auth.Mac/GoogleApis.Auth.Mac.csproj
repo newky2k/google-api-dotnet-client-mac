@@ -75,6 +75,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="OAuth2\" />
+    <Folder Include="Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +85,11 @@
     <Compile Include="OAuth2\LocalServerCodeReceiver.cs" />
     <Compile Include="OAuth2\PromptCodeReceiver.cs" />
     <Compile Include="OAuth2\ServiceAccountCredential.cs" />
+    <Compile Include="OAuth2\MacBrowserCodeReciever.cs" />
+    <Compile Include="Windows\MacAuthWindow.cs" />
+    <Compile Include="Windows\MacAuthWindow.designer.cs">
+      <DependentUpon>MacAuthWindow.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
@@ -95,5 +101,8 @@
       <Project>{D9A6EE6E-3679-4303-937B-1FEE1AA5DCE4}</Project>
       <Name>GoogleApis.Mac</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Windows\MacAuthWindow.xib" />
   </ItemGroup>
 </Project>

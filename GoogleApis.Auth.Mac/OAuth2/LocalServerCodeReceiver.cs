@@ -26,6 +26,7 @@ using System.Threading.Tasks;
 using Google.Apis.Auth.OAuth2.Requests;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Logging;
+using System;
 
 namespace Google.Apis.Auth.OAuth2
 {

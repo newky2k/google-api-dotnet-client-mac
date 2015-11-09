@@ -122,7 +122,7 @@ namespace Google.Apis.Auth.OAuth2
 			var flow = new GoogleAuthorizationCodeFlow(initializer);
 
 			// Create an authorization code installed app instance and authorize the user.
-			return await new AuthorizationCodeInstalledApp(flow, new LocalServerCodeReceiver()).AuthorizeAsync
+			return await new AuthorizationCodeInstalledApp(flow, new MacBrowserCodeReciever()).AuthorizeAsync
 				(user, taskCancellationToken).ConfigureAwait(false);
 		}
 	}
