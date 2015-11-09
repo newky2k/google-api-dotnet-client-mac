@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>Google.Apis.Auth.Mac</id>
+    <version>$1.9.3</version>
+    <title>Google APIs Auth Client Library for Xamarin.Mac</title>
+    <authors>$author$</authors>
+    <owners>xamarin</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://developers.google.com/api-client-library/dotnet</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description> The Google APIs Client Library is a runtime client for working with Google services for Xamarin.Mac.  
+
+          This package includes auth components like user-credential, authorization code flow, etc. for making authenticated calls using the OAuth2 spec.
+        
+          Supported Platforms:
+
+          - Xamarin.Mac
+
+          </description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>Google Auth</tags>
+  </metadata>
+</package>
