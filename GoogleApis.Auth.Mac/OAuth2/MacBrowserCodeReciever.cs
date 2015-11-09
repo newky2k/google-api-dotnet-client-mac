@@ -24,21 +24,22 @@ namespace Google.Apis.Auth.OAuth2
 		/// <summary>Close HTML tag to return the browser so it will close itself.</summary>
 		private const string ClosePageResponse =
 			@"<html>
-  <head><title>OAuth 2.0 Authentication Token Received</title></head>
-  <body>
-    Received verification code. You may now close this window.
-    <script type='text/javascript'>
-      // This doesn't work on every browser.
-      window.setTimeout(function() {
-          window.open('', '_self', ''); 
-          window.close(); 
-        }, 1000);
-      if (window.opener) { window.opener.checkToken(); }
-    </script>
-  </body>
-</html>";
+			  <head><title>OAuth 2.0 Authentication Token Received</title></head>
+			  <body>
+			    Received verification code. You may now close this window.
+			    <script type='text/javascript'>
+			      // This doesn't work on every browser.
+			      window.setTimeout(function() {
+			          window.open('', '_self', ''); 
+			          window.close(); 
+			        }, 1000);
+			      if (window.opener) { window.opener.checkToken(); }
+			    </script>
+			  </body>
+			</html>";
 
 		private string redirectUri;
+
 		public string RedirectUri
 		{
 			get
@@ -54,6 +55,12 @@ namespace Google.Apis.Auth.OAuth2
 
 		#region ICodeReceiver implementation
 
+		/// <summary>
+		/// Receives the authorization code.
+		/// </summary>
+		/// <param name="url">The authorization code request URL</param>
+		/// <param name="taskCancellationToken">Cancellation token</param>
+		/// <returns>The authorization code response</returns>
 		public Task<AuthorizationCodeResponseUrl> ReceiveCodeAsync (AuthorizationCodeRequestUrl url, CancellationToken taskCancellationToken)
 		{
 			var authorizationUrl = url.Build().ToString();
@@ -61,35 +68,16 @@ namespace Google.Apis.Auth.OAuth2
 			var tcsk = new TaskCompletionSource<AuthorizationCodeResponseUrl> ();
 
 			new NSObject ().BeginInvokeOnMainThread (async () => {
-					
-				var listener = new HttpListener();
-				listener.Prefixes.Add(RedirectUri);
-				listener.Start();
 
-				var window = new MacAuthWindow(authorizationUrl);
-				window.Center();
-				window.ParentWindow = NSApplication.SharedApplication.KeyWindow;
-				window.MakeKeyAndOrderFront(NSApplication.SharedApplication.KeyWindow);
+				var window = new MacAuthWindow(authorizationUrl, RedirectUri);
 
-				var context = await listener.GetContextAsync().ConfigureAwait(false);
-				NameValueCollection coll = context.Request.QueryString;
+				var result = await window.ShowDialogAsync(NSApplication.SharedApplication.KeyWindow);
 
-				// Write a "close" response.
-				using (var writer = new StreamWriter(context.Response.OutputStream))
-				{
-					writer.WriteLine(ClosePageResponse);
-					writer.Flush();
-				}
-				context.Response.OutputStream.Close();
-					
-				var item = new AuthorizationCodeResponseUrl(coll.AllKeys.ToDictionary(k => k, k => coll[k]));
-
-				tcsk.SetResult(item);
+				tcsk.SetResult(result);
 
 			});
 
 			return tcsk.Task;
-			//NSApplication.SharedApplication.KeyWindow;
 		}
 			
 
@@ -109,10 +97,7 @@ namespace Google.Apis.Auth.OAuth2
 				listener.Stop();
 			}
 		}
-
-		public MacBrowserCodeReciever ()
-		{
-		}
+			
 	}
 }
 

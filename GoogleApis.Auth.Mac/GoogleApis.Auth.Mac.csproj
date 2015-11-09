@@ -102,7 +102,4 @@
       <Name>GoogleApis.Mac</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="Windows\MacAuthWindow.xib" />
-  </ItemGroup>
 </Project>
