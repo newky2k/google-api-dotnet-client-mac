@@ -106,6 +106,9 @@ namespace Google.Apis.Auth.Windows
 			mTask.SetResult (mItem);
 		}
 
+		/// <summary>
+		/// Setups the listener.
+		/// </summary>
 		private async void SetupListener()
 		{
 			mlistener = new HttpListener();
@@ -127,6 +130,9 @@ namespace Google.Apis.Auth.Windows
 			mItem = new AuthorizationCodeResponseUrl(coll.AllKeys.ToDictionary(k => k, k => coll[k]));
 		}
 
+		/// <summary>
+		/// Closes the listener.
+		/// </summary>
 		private void CloseListener()
 		{
 			mlistener.Close ();
