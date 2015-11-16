@@ -22,8 +22,7 @@
     <copyright>Copyright 2015</copyright>
     <tags>Google</tags>
     <dependencies>
-	    <group targetFramework="Xamarin.Mac20">
-	      <dependency id="Google.Api" version="1.9.3" />
+	    <dependency id="Google.Api" version="1.9.3" />
 	      <dependency id="Google.Apis.Core" version="1.9.3" />
 	      <dependency id="Microsoft.Bcl" version="1.1.10" />
 	      <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
@@ -32,7 +31,6 @@
 	      <dependency id="Newtonsoft.Json" version="7.0.1" />
 	      <dependency id="Portable.BouncyCastle" version="1.7.0.2" />
 	      <dependency id="Zlib.Portable.Signed" version="1.11.0" />
-	    </group>
     </dependencies>
   </metadata>
 </package>
