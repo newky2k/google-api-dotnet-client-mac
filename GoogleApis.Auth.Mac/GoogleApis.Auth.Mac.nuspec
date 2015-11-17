@@ -2,30 +2,28 @@
 <package >
   <metadata>
     <id>Google.Apis.Auth.Mac</id>
-    <version>$1.9.3</version>
+    <version>1.9.3-beta</version>
     <title>Google APIs Auth Client Library for Xamarin.Mac</title>
     <authors>Dave Humphreys, Google Inc.</authors>
     <owners>xamarin, Google Inc.</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <projectUrl>https://developers.google.com/api-client-library/dotnet</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description> The Google APIs Client Library is a runtime client for working with Google services for Xamarin.Mac.  
-
-          This package includes auth components like user-credential, authorization code flow, etc. for making authenticated calls using the OAuth2 spec.
+    <summary>The Google APIs Client Library is a runtime client for working with Google services for Xamarin.Mac</summary>
+    <description>The Google APIs Client Library is a runtime client for working with Google services for Xamarin.Mac
+     
+    This package includes auth components like user-credential, authorization code flow, etc. for making authenticated calls using the OAuth2 spec.
         
           Supported Platforms:
 
           - Xamarin.Mac
 
-          </description>
-    <releaseNotes>Initial release of mac compatibility</releaseNotes>
+    </description>
+    <releaseNotes>Initial release of Mac compatibility</releaseNotes>
     <tags>Google Auth</tags>
-    <files>
-       <file src="bin/Release/Google.Apis.Auth.PlatformServices.dll" target="lib\Xamarin.Mac20" />
-    </files>
     <dependencies>
 	    <group>
-	    	  <dependency id="Google.Api" version="1.9.3" />
+	    	  <dependency id="Google.Apis" version="1.9.3" />
 		      <dependency id="Google.Apis.Core" version="1.9.3" />
 		      <dependency id="Microsoft.Bcl" version="1.1.10" />
 		      <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
@@ -35,8 +33,11 @@
 		      <dependency id="Portable.BouncyCastle" version="1.7.0.2" />
 	    </group>
 	    <group targetFramework="Xamarin.Mac20">
-	        <dependency id="Google.Apis.Core.Mac" version="1.9.3" />
+	        <dependency id="Google.Apis.Core.Mac" version="1.9.3-beta2" />
 	    </group>
     </dependencies>
   </metadata>
+	<files>
+	   <file src="bin/Release/Google.Apis.Auth.PlatformServices.dll" target="lib\Xamarin.Mac20" />
+	</files>
 </package>

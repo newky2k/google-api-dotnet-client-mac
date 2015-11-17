@@ -2,15 +2,16 @@
 <package >
   <metadata>
     <id>Google.Apis.Core.Mac</id>
-    <version>1.9.2</version>
+    <version>1.9.3-beta2</version>
     <title>Google APIs Core Client Library for Mac</title>
     <authors>Dave Humphreys, Google</authors>
     <owners>xamarin, Google Inc.</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
     <projectUrl>https://developers.google.com/api-client-library/dotnet</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>The Google APIs Core Library contains the Google APIs HTTP layer, JSON support, Data-store, logging and so on.  
-
+     <summary>The Google APIs Core Library contains the Google APIs HTTP layer, JSON support, Data-store, logging and so on.</summary>
+    <description>The Google APIs Core Library contains the Google APIs HTTP layer, JSON support, Data-store, logging and so on.
+  
     This library provides Mac platform support for FileStorage and Crypto functions
 
           Supported Platforms:
@@ -18,11 +19,11 @@
           - Xamarin.Mac
 
     </description>
-    <releaseNotes>Initial release of mac compatibility</releaseNotes>
+    <releaseNotes>Initial release of Mac compatibility</releaseNotes>
     <tags>Google</tags>
     <dependencies>
 	    <group>
-	    	  <dependency id="Google.Api" version="1.9.3" />
+	    	  <dependency id="Google.Apis" version="1.9.3" />
 		      <dependency id="Google.Apis.Core" version="1.9.3" />
 		      <dependency id="Microsoft.Bcl" version="1.1.10" />
 		      <dependency id="Microsoft.Bcl.Async" version="1.0.168" />
