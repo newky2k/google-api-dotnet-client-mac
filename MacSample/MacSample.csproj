@@ -4,11 +4,11 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{26C0E64A-27F9-4582-AD1B-DFDFB5E21182}</ProjectGuid>
+    <ProjectGuid>{23DAD722-A2F2-4BEE-BBEB-2ED02FB4A69A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>GoogleApiSample</RootNamespace>
+    <RootNamespace>MacSample</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <AssemblyName>GoogleApiSample</AssemblyName>
+    <AssemblyName>MacSample</AssemblyName>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>

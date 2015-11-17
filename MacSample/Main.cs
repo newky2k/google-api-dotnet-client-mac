@@ -1,6 +1,6 @@
 ﻿using AppKit;
 
-namespace GoogleApiSample
+namespace MacSample
 {
 	static class MainClass
 	{

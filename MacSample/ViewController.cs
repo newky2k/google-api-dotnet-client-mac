@@ -2,12 +2,13 @@
 
 using AppKit;
 using Foundation;
+using GoogleApiSample;
 
-namespace GoogleApiSample
+namespace MacSample
 {
 	public partial class ViewController : NSViewController
 	{
-		//private GoogleAuthenticator mGoogleAuth;
+		private GoogleAuthenticator mAuthenticator;
 
 		public ViewController (IntPtr handle) : base (handle)
 		{
@@ -16,8 +17,6 @@ namespace GoogleApiSample
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
-			//mGoogleAuth = new GoogleAuthenticator ();
 
 			// Do any additional setup after loading the view.
 		}
@@ -30,11 +29,6 @@ namespace GoogleApiSample
 				base.RepresentedObject = value;
 				// Update the view, if already loaded.
 			}
-		}
-
-		partial void didClickAuthenticate (NSObject sender)
-		{
-			//mGoogleAuth.Authenticate();
 		}
 	}
 }

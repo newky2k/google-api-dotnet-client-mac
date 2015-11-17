@@ -1,7 +1,7 @@
 ﻿using AppKit;
 using Foundation;
 
-namespace GoogleApiSample
+namespace MacSample
 {
 	[Register ("AppDelegate")]
 	public class AppDelegate : NSApplicationDelegate
@@ -19,7 +19,6 @@ namespace GoogleApiSample
 		{
 			// Insert code here to tear down your application
 		}
-			
 	}
 }
 
