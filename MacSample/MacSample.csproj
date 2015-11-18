@@ -80,4 +80,10 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\SampleLibrary\SampleLibrary.csproj">
+      <Project>{FC063245-514E-4A99-B802-FECAADF90FCE}</Project>
+      <Name>SampleLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
