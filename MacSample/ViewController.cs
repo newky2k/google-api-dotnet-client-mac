@@ -2,7 +2,7 @@
 
 using AppKit;
 using Foundation;
-using SampleLibrary;
+using System.Threading.Tasks;
 
 namespace MacSample
 {
@@ -30,6 +30,11 @@ namespace MacSample
 				base.RepresentedObject = value;
 				// Update the view, if already loaded.
 			}
+		}
+
+		partial void OnClickedAuthorise (AppKit.NSButton sender)
+		{
+			mAuthenticator.Authenticate();
 		}
 	}
 }

@@ -135,7 +135,8 @@ namespace Google.Apis.Auth.Windows
 		/// </summary>
 		private void CloseListener()
 		{
-			mlistener.Close ();
+			
+			//mlistener.Close ();
 
 			mlistener = null;
 		}

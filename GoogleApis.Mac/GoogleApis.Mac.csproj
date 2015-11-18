@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Google</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <AssemblyName>MacSample</AssemblyName>
+    <AssemblyName>Google.Apis.PlatformServices</AssemblyName>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
