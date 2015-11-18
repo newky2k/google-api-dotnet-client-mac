@@ -6,6 +6,7 @@ using System.Threading;
 using Google.Apis.Util.Store;
 using Google.Apis.Services;
 using System.Threading.Tasks;
+using AppKit;
 
 namespace MacSample
 {
@@ -44,6 +45,7 @@ namespace MacSample
 
 		public void Authenticate()
 		{
+			//execute off of the main ui thread so that the auth window can be shown
 			Task.Run (() => 
 			{
 				// Set an output path for the saved authorisation token	
@@ -62,7 +64,7 @@ namespace MacSample
 				 */
 				using (var stream = new FileStream ("client_secret.json", FileMode.Open, FileAccess.Read)) {
 
-					credential = GoogleWebAuthorizationBroker.AuthorizeAsync (
+					credential = MacGoogleWebAuthorizationBroker.AuthorizeAsync (
 						GoogleClientSecrets.Load (stream).Secrets,
 						Scopes,
 						"user",

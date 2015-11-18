@@ -86,8 +86,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OAuth2\DefaultCredentialProvider.cs" />
     <Compile Include="OAuth2\GoogleCredential.cs" />
-    <Compile Include="OAuth2\GoogleWebAuthorizationBroker.cs" />
-    <Compile Include="OAuth2\LocalServerCodeReceiver.cs" />
     <Compile Include="OAuth2\PromptCodeReceiver.cs" />
     <Compile Include="OAuth2\ServiceAccountCredential.cs" />
     <Compile Include="OAuth2\MacBrowserCodeReciever.cs" />
@@ -95,6 +93,7 @@
     <Compile Include="Windows\MacAuthWindow.designer.cs">
       <DependentUpon>MacAuthWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="OAuth2\MacGoogleWebAuthorizationBroker.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />

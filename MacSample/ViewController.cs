@@ -34,7 +34,10 @@ namespace MacSample
 
 		partial void OnClickedAuthorise (AppKit.NSButton sender)
 		{
+			
 			mAuthenticator.Authenticate();
+
+
 		}
 	}
 }

@@ -22,11 +22,12 @@ using System.Threading.Tasks;
 
 using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Util.Store;
+using AppKit;
 
 namespace Google.Apis.Auth.OAuth2
 {
 	/// <summary>A helper utility to manage the authorization code flow.</summary>
-	public class GoogleWebAuthorizationBroker
+	public class MacGoogleWebAuthorizationBroker
 	{
 		/// <summary>The folder which is used by the <see cref="Google.Apis.Util.Store.FileDataStore"/>.</summary>
 		/// <remarks>
@@ -59,7 +60,7 @@ namespace Google.Apis.Auth.OAuth2
 			return await AuthorizeAsyncCore(initializer, scopes, user, taskCancellationToken, dataStore)
 				.ConfigureAwait(false);
 		}
-
+			
 		/// <summary>Asynchronously authorizes the specified user.</summary>
 		/// <remarks>
 		/// In case no data store is specified, <see cref="Google.Apis.Util.Store.FileDataStore"/> will be used by 
@@ -125,6 +126,7 @@ namespace Google.Apis.Auth.OAuth2
 			return await new AuthorizationCodeInstalledApp(flow, new MacBrowserCodeReciever()).AuthorizeAsync
 				(user, taskCancellationToken).ConfigureAwait(false);
 		}
+
 	}
 }
 

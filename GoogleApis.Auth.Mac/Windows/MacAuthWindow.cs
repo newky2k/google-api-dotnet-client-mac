@@ -151,13 +151,12 @@ namespace Google.Apis.Auth.Windows
 			mTask = new TaskCompletionSource<AuthorizationCodeResponseUrl> ();
 
 			owner.BeginInvokeOnMainThread (() => {
-					
+
 				this.ParentWindow = owner;
 				this.MakeKeyAndOrderFront(owner);
 				this.Center ();
 
 			});
-
 
 			return mTask.Task;
 		}

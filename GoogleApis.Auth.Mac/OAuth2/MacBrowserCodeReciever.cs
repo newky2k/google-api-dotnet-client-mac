@@ -53,6 +53,17 @@ namespace Google.Apis.Auth.OAuth2
 			}
 		}
 
+		#region Constructors
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Google.Apis.Auth.OAuth2.MacBrowserCodeReciever"/> class.
+		/// </summary>
+		public MacBrowserCodeReciever ()
+		{
+			
+		}
+			
+		#endregion
 		#region ICodeReceiver implementation
 
 		/// <summary>
