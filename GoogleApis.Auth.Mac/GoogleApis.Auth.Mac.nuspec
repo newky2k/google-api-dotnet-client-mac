@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Google.Apis.Auth.Mac</id>
-    <version>1.9.3-beta</version>
+    <version>1.9.3-beta2</version>
     <title>Google APIs Auth Client Library for Xamarin.Mac</title>
     <authors>Dave Humphreys, Google Inc.</authors>
     <owners>xamarin, Google Inc.</owners>
