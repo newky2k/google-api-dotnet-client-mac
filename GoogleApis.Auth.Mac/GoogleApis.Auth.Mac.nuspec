@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Google.Apis.Auth.Mac</id>
-    <version>1.9.3-beta2</version>
+    <version>1.9.3</version>
     <title>Google APIs Auth Client Library for Xamarin.Mac</title>
     <authors>Dave Humphreys, Google Inc.</authors>
     <owners>xamarin, Google Inc.</owners>
@@ -33,7 +33,7 @@
 		      <dependency id="Portable.BouncyCastle" version="1.7.0.2" />
 	    </group>
 	    <group targetFramework="Xamarin.Mac20">
-	        <dependency id="Google.Apis.Core.Mac" version="1.9.3-beta3" />
+	        <dependency id="Google.Apis.Core.Mac" version="1.9.3" />
 	    </group>
     </dependencies>
   </metadata>
